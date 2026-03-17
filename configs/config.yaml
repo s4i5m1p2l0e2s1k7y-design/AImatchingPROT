@@ -1,0 +1,85 @@
+# M&A AI Matching System Configuration
+
+project:
+  name: "ma-matching"
+  version: "0.1.0"
+
+# Data generation settings
+data:
+  sellers:
+    count: 2000
+    output: "data/generated/sellers.jsonl"
+  buyers:
+    count: 10000
+    output: "data/generated/buyers.jsonl"
+  ground_truth:
+    count: 500
+    output: "data/ground_truth/ground_truth.jsonl"
+    breakdown:
+      a_match: 50      # 明確なマッチ
+      b_match: 150     # 条件付きマッチ
+      c_boundary: 200  # 境界ケース
+      d_mismatch: 100  # 明確なミスマッチ
+
+# Stage 1: Bi-Encoder
+stage1:
+  model: "intfloat/multilingual-e5-large"
+  top_k: 5  # 各売り手に対する上位N件
+  expected_output: 10000
+  batch_size: 256
+  similarity_metric: "cosine"
+
+# Stage 2: Cross-Encoder
+stage2:
+  model: "cross-encoder/ms-marco-MiniLM-L-12-v2"
+  top_k: 100
+  batch_size: 64
+
+# Stage 3: LLM Multi-Agent
+stage3:
+  model: "claude-sonnet-4-20250514"
+  top_k: 3  # 最終出力の上位件数
+  max_debate_rounds: 2  # ディベート最大往復回数
+  score_divergence_threshold: 2  # ディベート発動閾値
+  agents:
+    - name: "synergy_agent"
+      role: "事業シナジー分析官"
+      persona: "M&A経験豊富な事業開発マネージャー"
+    - name: "financial_agent"
+      role: "財務分析官"
+      persona: "公認会計士・バリュエーションの専門家"
+    - name: "risk_agent"
+      role: "リスク評価官"
+      persona: "M&Aリーガルアドバイザー"
+    - name: "culture_agent"
+      role: "文化適合性評価官"
+      persona: "組織コンサルタント"
+    - name: "moderator_agent"
+      role: "統括エージェント"
+      persona: "シニアM&Aアドバイザー"
+
+# Evaluation targets
+evaluation:
+  stage1:
+    recall_at_5_a: 0.95
+    recall_at_5_b: 0.80
+  stage2:
+    precision_at_100: 0.30
+    ndcg_at_100: 0.70
+  stage3:
+    top3_hit_rate_a: 0.80
+    recommendation_quality: 4.0  # /5.0
+
+# Proposal document settings
+proposal:
+  sections:
+    - "エグゼクティブサマリー"
+    - "買い手企業概要"
+    - "シナジー分析"
+    - "財務面の整合性"
+    - "リスクと対応策"
+    - "文化的適合性"
+    - "推奨アクション"
+  char_limits:
+    executive_summary: [200, 400]
+    analysis_section: [300, 800]

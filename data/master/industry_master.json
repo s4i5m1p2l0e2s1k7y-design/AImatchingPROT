@@ -1,0 +1,128 @@
+{
+  "industries": [
+    {
+      "code": "IND-01",
+      "name": "製造業",
+      "target_count": 400,
+      "ratio": 0.20,
+      "sub_industries": [
+        "精密部品", "金属加工", "樹脂成形", "電子部品", "食品加工",
+        "化学品", "繊維・アパレル", "自動車部品", "機械製造", "印刷"
+      ]
+    },
+    {
+      "code": "IND-02",
+      "name": "IT・ソフトウェア",
+      "target_count": 300,
+      "ratio": 0.15,
+      "sub_industries": [
+        "SaaS", "受託開発", "Web制作", "インフラ・運用", "組込みソフト",
+        "AI・データ分析", "セキュリティ", "モバイルアプリ"
+      ]
+    },
+    {
+      "code": "IND-03",
+      "name": "小売・卸売",
+      "target_count": 280,
+      "ratio": 0.14,
+      "sub_industries": [
+        "食品卸", "建材卸", "アパレル小売", "EC事業", "専門商社",
+        "ドラッグストア", "家電量販", "雑貨・インテリア"
+      ]
+    },
+    {
+      "code": "IND-04",
+      "name": "飲食・食品",
+      "target_count": 200,
+      "ratio": 0.10,
+      "sub_industries": [
+        "レストラン", "居酒屋", "カフェ", "弁当・惣菜", "ベーカリー",
+        "食品製造", "ケータリング", "フードデリバリー"
+      ]
+    },
+    {
+      "code": "IND-05",
+      "name": "建設・不動産",
+      "target_count": 180,
+      "ratio": 0.09,
+      "sub_industries": [
+        "総合建設", "内装工事", "設備工事", "不動産仲介", "不動産管理",
+        "リフォーム", "土木", "ビルメンテナンス"
+      ]
+    },
+    {
+      "code": "IND-06",
+      "name": "医療・介護・福祉",
+      "target_count": 160,
+      "ratio": 0.08,
+      "sub_industries": [
+        "クリニック", "調剤薬局", "介護施設", "訪問介護", "歯科",
+        "医療機器", "障害者福祉", "リハビリ"
+      ]
+    },
+    {
+      "code": "IND-07",
+      "name": "物流・運輸",
+      "target_count": 120,
+      "ratio": 0.06,
+      "sub_industries": [
+        "一般貨物", "倉庫業", "引越し", "宅配", "冷凍冷蔵輸送",
+        "国際物流", "タクシー・バス"
+      ]
+    },
+    {
+      "code": "IND-08",
+      "name": "人材・教育",
+      "target_count": 100,
+      "ratio": 0.05,
+      "sub_industries": [
+        "人材派遣", "人材紹介", "学習塾", "英会話", "研修・セミナー",
+        "保育園", "専門学校"
+      ]
+    },
+    {
+      "code": "IND-09",
+      "name": "金融・保険",
+      "target_count": 80,
+      "ratio": 0.04,
+      "sub_industries": [
+        "保険代理店", "リース", "ファクタリング", "FP事務所",
+        "クレジット", "投資顧問"
+      ]
+    },
+    {
+      "code": "IND-10",
+      "name": "その他サービス",
+      "target_count": 180,
+      "ratio": 0.09,
+      "sub_industries": [
+        "広告・マーケティング", "コンサルティング", "清掃", "美容・エステ",
+        "ペット関連", "冠婚葬祭", "レジャー・スポーツ", "写真・映像"
+      ]
+    }
+  ],
+  "transfer_reasons": [
+    { "code": "TR-01", "reason": "後継者不在", "target_count": 700, "ratio": 0.35 },
+    { "code": "TR-02", "reason": "事業の選択と集中", "target_count": 300, "ratio": 0.15 },
+    { "code": "TR-03", "reason": "業績不振・事業再生", "target_count": 240, "ratio": 0.12 },
+    { "code": "TR-04", "reason": "オーナーの高齢・引退", "target_count": 280, "ratio": 0.14 },
+    { "code": "TR-05", "reason": "創業者のExit", "target_count": 200, "ratio": 0.10 },
+    { "code": "TR-06", "reason": "業界再編への対応", "target_count": 140, "ratio": 0.07 },
+    { "code": "TR-07", "reason": "その他", "target_count": 140, "ratio": 0.07 }
+  ],
+  "acquisition_purposes": [
+    { "code": "AP-01", "purpose": "既存事業の拡大（水平統合）", "target_count": 3000, "ratio": 0.30 },
+    { "code": "AP-02", "purpose": "新規事業への参入", "target_count": 2500, "ratio": 0.25 },
+    { "code": "AP-03", "purpose": "サプライチェーン統合（垂直統合）", "target_count": 1500, "ratio": 0.15 },
+    { "code": "AP-04", "purpose": "人材・技術の獲得", "target_count": 1500, "ratio": 0.15 },
+    { "code": "AP-05", "purpose": "地域展開", "target_count": 1000, "ratio": 0.10 },
+    { "code": "AP-06", "purpose": "財務的投資（PE/ファンド）", "target_count": 500, "ratio": 0.05 }
+  ],
+  "revenue_bands": [
+    { "label": "~50百万円", "min": 5, "max": 50, "target_count": 400, "ratio": 0.20 },
+    { "label": "50~200百万円", "min": 50, "max": 200, "target_count": 600, "ratio": 0.30 },
+    { "label": "200~500百万円", "min": 200, "max": 500, "target_count": 500, "ratio": 0.25 },
+    { "label": "500~1000百万円", "min": 500, "max": 1000, "target_count": 300, "ratio": 0.15 },
+    { "label": "1000百万円~", "min": 1000, "max": 5000, "target_count": 200, "ratio": 0.10 }
+  ]
+}
